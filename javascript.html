@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		 var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+		 for(i=0;i<5;i++){
+		 	document.write("row "+i+"<br>");
+			 for(j=0;j<4;j++)
+			 	document.write(a[i][j]+"<br>");
+		}
+
+document.write("<br>======================<br>");
+
+		function bolen(b,c){
+			if(b%c!=0){
+				d=b%c;
+				b=c;
+				c=d;
+				bolen(b,c);
+			}
+			else
+				document.write(c);
+		}
+		bolen(54,27);
+
+document.write("<br>======================<br><br>");
+	
+	function siralama(){
+		var a=[-5, -2, -6, 0, -1];
+		for(var i=0;i<5;i++)
+			for(var j=i;j<5;j++)
+				if(a[i]>a[j])
+				{
+					t=a[i];
+					a[i]=a[j];
+					a[j]=t;
+				}
+
+		for(var i=0;i<5;i++)
+	    document.write(a[i]+" ");				
+	}
+	siralama();
+
+document.write("<br>======================<br><br>");
+
+
+function tekrarlanma(){
+	var a=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 2,2,4, 9, 3];
+	var b=[];
+	var c=0;
+	for(var i=0;i<15;i++){
+		t=0;
+		m=0;
+
+		for(var n=0;n<c;n++)
+			if(a[i]==b[n])
+				m=1;
+
+		if(m!=1){
+			for(var j=0;j<15;j++){
+				if(a[i]==a[j]){
+					t++;
+				}
+			}
+
+
+			b[c]=a[i];
+			c++;
+
+
+			if(t>1){
+				document.write(a[i]+"-nin sayi: "+t+"<br>");
+			}
+		}   //m!==1
+	}		
+}
+
+tekrarlanma();
+document.write("<br>======================<br><br>");
+
+function sahmat(){
+	var sh=[];
+	var s=0;
+	var t=1;
+	for(var i=0;i<8;i++){
+		sh[i] = [];
+		for(var j=0;j<8;j++){
+			
+			sh[i][j]=t;
+			s=s+t;
+			t=2*t;
+		}
+	}
+
+	for(var i=0;i<8;i++){
+		for(var j=0;j<8;j++){
+			document.write(sh[i][j]+" -- ");
+		}
+		document.write("<br><br>");
+	}
+	document.write(" cemi: "+s);
+
+}
+sahmat();
+
+document.write("<br>======================<br><br>");
+
+function tersi(){
+	var newArray =['C','o','d','e',' ','A','c','a','d','e','m','y'];
+	var newArray2=[];
+	var j=11;
+	for(var i=0;i<12;i++){
+		newArray2[i]=newArray[j];
+		j--;
+	}
+
+document.write(newArray2);
+}
+tersi();
+document.write("<br>======================<br><br>");
+
+function sade_ededler(){
+	var s=0;
+	for(var i=7;i<2016;i=i+2){
+		var t=0;
+
+		for(var j=2;j<=i/2;j++){     // Math.sqrt() istifade etmek daha yaxsi olardi.
+			if(i%j==0)
+				t=1;
+		}	
+
+		if(t==0){
+			s++;
+			document.write(i+" / ");
+		}
+
+	}
+	document.write("<br> sayi:  "+s);
+}
+
+sade_ededler();
+document.write("<br>======================<br><br>");
+
+
+	</script>
+</body>
+</html>
